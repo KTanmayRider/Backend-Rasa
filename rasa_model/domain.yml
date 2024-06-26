@@ -1,0 +1,35 @@
+version: "3.1"
+
+intents:
+  - greet
+  - ask_about_company
+  - ask_about_services
+  - ask_about_ai_training
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I help you today?"
+
+actions:
+  - action_utter_response
+
+slots:
+  service:
+    type: text
+    mappings:
+      - type: from_text
+
+  technology:
+    type: text
+    mappings:
+      - type: from_text
+
+  team_member:
+    type: text
+    mappings:
+      - type: from_text
+
+  company_name:
+    type: text
+    mappings:
+      - type: from_text

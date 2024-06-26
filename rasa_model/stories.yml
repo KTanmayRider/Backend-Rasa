@@ -1,0 +1,22 @@
+version: "2.0"
+
+stories:
+- story: greet path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: ask about company
+  steps:
+  - intent: ask_about_company
+  - action: action_utter_response
+
+- story: ask about services
+  steps:
+  - intent: ask_about_services
+  - action: action_utter_response
+
+- story: ask about AI training
+  steps:
+  - intent: ask_about_ai_training
+  - action: action_utter_response
