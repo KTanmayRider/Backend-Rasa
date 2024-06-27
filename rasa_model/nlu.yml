@@ -1,0 +1,128 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hey
+    - Hello
+    - Hi there
+    - Good morning
+    - Good afternoon
+    - Good evening
+    - Greetings
+    - How's it going?
+    - What's up?
+    - How are you doing today?
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Farewell
+    - Have a good one
+    - Talk to you soon
+    - Catch you later
+
+- intent: affirm
+  examples: |
+    - Yes
+    - Sure
+    - Ok
+    - Yep
+    - Absolutely
+    - Correct
+    - Definitely
+    - Right
+
+- intent: deny
+  examples: |
+    - No
+    - Nope
+    - Not really
+    - Nah
+    - Negative
+    - I don't think so
+    - That's not correct
+
+- intent: thanks
+  examples: |
+    - Thanks
+    - Thank you
+    - I appreciate it
+    - You're the best
+    - Thanks for your help
+    - That's very helpful
+
+- intent: bot_challenge
+  examples: |
+    - Are you a bot?
+    - Are you a human?
+    - Are you a computer program?
+    - Are you real?
+    - Who are you?
+    - What are you?
+
+- intent: ask_about_company
+  examples: |
+    - What does Green Rider Technology do?
+    - What is your company's mission?
+    - Who founded Green Rider Technology?
+    - Tell me about your company culture.
+    - What are your company values?
+    - How long have you been in business?
+    - What industries do you serve?
+    - What makes your company unique?
+    - Can you tell me more about Green Rider Technology?
+
+- intent: ask_about_services
+  examples: |
+    - What services do you offer?
+    - Tell me more about your AI consulting services.
+    - I'm interested in data science solutions.
+    - Do you provide machine learning development?
+    - Can you help me with natural language processing (NLP)?
+    - Do you offer computer vision solutions?
+    - I need help with MLOps.
+    - What kind of custom AI solutions do you create?
+    - How can AI benefit my business?
+    - What industries have you worked with?
+
+- intent: ask_about_ai_training
+  examples: |
+    - Do you offer AI training programs?
+    - What topics do your AI training programs cover?
+    - Who are your AI training programs designed for?
+    - How can I sign up for an AI training program?
+    - What are the benefits of your AI training programs?
+    - Are your AI training programs online or in-person?
+    - How much do your AI training programs cost?
+    - Can you customize your AI training programs for my company?
+
+- intent: ask_about_team
+  examples: |
+    - Who is on your team?
+    - What kind of experience does your team have?
+    - Can I see some of your team's past projects?
+    - How can I contact a specific team member?
+    - What are your team's areas of expertise?
+
+- intent: request_contact
+  examples: |
+    - How can I get in touch with you?
+    - What's your contact information?
+    - Can I schedule a consultation?
+    - I'd like to speak with someone about your services.
+    - I'd like to request a quote.
+    - Can you connect me with a sales representative?
+    - What is the best way to reach you?
+
+# General conversation intents using the Kaggle dataset
+- intent: general_conversation
+  examples: |
+    - What is the capital of France?
+    - The capital of France is Paris.
+    - How many continents are there?
+    - There are seven continents.
+    - Who wrote 'To Kill a Mockingbird'?
+    - 'To Kill a Mockingbird' was written by Harper Lee.
+# Continue with more examples from the dataset
