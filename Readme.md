@@ -1,11 +1,8 @@
+# My Project
 
+This repository contains a complete setup for a chatbot using Rasa for natural language understanding, FastAPI for backend services, and a React frontend built with Vite.
 
-
-# Chatbot Application
-
-This repository contains the code for a chatbot application using FastAPI for the backend and Rasa for the chatbot model. The backend handles API requests and communicates with the Rasa model to provide responses.
-
-## Folder Structure
+## Directory Structure
 
 ```
 myproject/
@@ -13,205 +10,191 @@ myproject/
 │   ├── app/
 │   │   ├── __init__.py
 │   │   ├── main.py
-│   │   └── api/
-│   │       ├── __init__.py
-│   │       └── chatbot.py
+│   │   ├── api/
+│   │   │   ├── __init__.py
+│   │   │   └── chatbot.py
+│   ├── venv/
+│   │   ├── ... (virtual environment files)
 │   ├── Dockerfile
-│   ├── requirements.txt
-│   └── README.md
-├── rasa_model/
-│   ├── actions.py
-│   ├── config.yml
-│   ├── credentials.yml
-│   ├── domain.yml
-│   ├── endpoints.yml
-│   ├── nlu.yml
-│   ├── stories.yml
-│   ├── models/
-│   │   ├── <unzipped model files>
-│   ├── metadata.json
-│   └── README.md
+│   └── requirements.txt
+├── my-chatbot-app/
+│   ├── node_modules/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Chatbot.jsx
+│   │   │   ├── ActionProvider.js
+│   │   │   ├── MessageParser.js
+│   │   │   └── config.js
+│   │   ├── App.css
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   ├── main.jsx
+│   ├── .eslintrc.cjs
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── README.md
+│   └── vite.config.js
+└── rasa_model/
+    ├── models/
+    │   ├── domain_provider/
+    │   ├── finetuning_validator/
+    │   ├── train_CountVectorsFeaturizer3/
+    │   ├── train_CountVectorsFeaturizer4/
+    │   ├── train_DIETClassifier5/
+    │   ├── train_LexicalSyntacticFeaturizer2/
+    │   ├── train_MemoizationPolicy0/
+    │   ├── train_RegexFeaturizer1/
+    │   ├── train_RulePolicy2/
+    │   └── train_TEDPolicy1/
+    ├── actions.py
+    ├── config.yml
+    ├── credentials.yml
+    ├── domain.yml
+    ├── endpoints.yml
+    ├── metadata.json
+    └── nlu.yml
 ```
 
-## Backend
-
-This folder contains the backend code for the chatbot application using FastAPI. The backend handles API requests and communicates with the Rasa model to provide responses.
-
-### Folder Structure
-
-```
-backend/
-├── app/
-│   ├── __init__.py
-│   ├── main.py
-│   └── api/
-│       ├── __init__.py
-│       └── chatbot.py
-├── Dockerfile
-├── requirements.txt
-└── README.md
-```
-
-### Files and Their Purpose
-
-#### `app/`
-
-- **`__init__.py`**: Initializes the `app` module.
-- **`main.py`**: The main entry point for the FastAPI application. It initializes the FastAPI app and includes the router for the chatbot API.
-- **`api/`**
-  - **`__init__.py`**: Initializes the `api` module.
-  - **`chatbot.py`**: Defines the API endpoint to handle chat messages. It accepts a JSON body, sends the message to the Rasa server, and returns the response.
-
-#### `Dockerfile`
-
-A Dockerfile to containerize the FastAPI application. It sets up a Python environment, installs dependencies, and runs the FastAPI server.
-
-#### `requirements.txt`
-
-A file listing the Python dependencies required for the FastAPI application. These can be installed using:
-
-```bash
-pip install -r requirements.txt
-```
-
-### How to Run
-
-#### 1. Install Dependencies
-
-Navigate to the `backend` directory and install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-#### 2. Run FastAPI Server
-
-Start the FastAPI server using Uvicorn:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-#### 3. Test API Endpoint
-
-Use a tool like Postman or `curl` to send a POST request to the `/api/chat` endpoint:
-
-##### Using `curl`
-
-```bash
-curl -X POST "http://localhost:8000/api/chat" -H "Content-Type: application/json" -d '{"message": "hello"}'
-```
-
-##### Using PowerShell
-
-```powershell
-Invoke-RestMethod -Method Post -Uri http://localhost:8000/api/chat -Headers @{"Content-Type"="application/json"} -Body '{"message": "hello"}'
-```
-
-### Docker Instructions
-
-#### 1. Build Docker Image
-
-Build the Docker image using the provided `Dockerfile`:
-
-```bash
-docker build -t my-fastapi-app .
-```
-
-#### 2. Run Docker Container
-
-Run the Docker container:
-
-```bash
-docker run -p 8000:8000 my-fastapi-app
-```
-
-### Summary
-
-This backend is designed to interface with a Rasa chatbot model, handling incoming chat messages and returning appropriate responses from the model. Follow the instructions above to set up, run, and test the backend server.
-
-## Rasa Model
-
-This folder contains the Rasa model and related configuration files for the chatbot application. The Rasa model is used to process user inputs and generate responses.
-
-### Folder Structure
-
-```
-rasa_model/
-├── actions.py
-├── config.yml
-├── credentials.yml
-├── domain.yml
-├── endpoints.yml
-├── nlu.yml
-├── stories.yml
-├── models/
-│   ├── <unzipped model files>
-├── metadata.json
-└── README.md
-```
-
-### Files and Their Purpose
-
-#### `actions.py`
-
-Defines custom actions that the Rasa model can use to generate responses. These actions can include API calls, database queries, or any other custom logic.
-
-#### `config.yml`
-
-Configuration file for the Rasa model. It includes pipeline and policies settings that define how the model processes user inputs and manages conversations.
-
-#### `credentials.yml`
-
-Credentials file for connecting to external messaging platforms or services. This file contains authentication details for services like Slack, Facebook Messenger, etc.
-
-#### `domain.yml`
-
-Defines the domain for the Rasa model, including intents, entities, slots, responses, and actions. This file outlines the structure of the conversations the model can handle.
-
-#### `endpoints.yml`
-
-Configuration for connecting to various endpoints like action servers, trackers, and event brokers. This file specifies where Rasa should send and receive data during conversation handling.
-
-#### `nlu.yml`
-
-Contains the training data for the Natural Language Understanding (NLU) component of the Rasa model. This file includes example phrases for different intents and entities.
-
-#### `stories.yml`
-
-Defines the training stories for the Rasa model. These stories are examples of conversations that the model can use to learn how to manage dialogues.
-
-#### `models/`
-
-Directory containing the trained Rasa model files. After training the model, the resulting files are stored in this directory.
-
-#### `metadata.json`
-
-Metadata file containing information about the trained model, such as training time and configuration.
-
-#### `README.md`
-
-This file. Provides an overview of the Rasa model folder, its structure, and the purpose of each file.
-
-### How to Run
-
-1. **Train the Model**:
-   ```bash
-   rasa train
-   ```
-
-2. **Run the Rasa Server**:
-   ```bash
-   rasa run
-   ```
-
-3. **Test the Model**:
-   Use Rasa's testing tools to evaluate the model's performance. Create test stories in `tests/test_stories.yml` and run:
-   ```bash
-   rasa test
-   ```
-
-### Summary
-
-This Rasa model is designed to handle chatbot conversations, processing user inputs, and generating appropriate responses based on the defined intents, entities, and stories.
-
+## Setup Instructions
+
+### Backend Setup
+
+1. **Navigate to the backend directory**:
+    ```bash
+    cd backend
+    ```
+
+2. **Create and activate a virtual environment**:
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+3. **Install the dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. **Run the FastAPI server**:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+### Rasa Model Setup
+
+1. **Navigate to the Rasa model directory**:
+    ```bash
+    cd rasa_model
+    ```
+
+2. **Install Rasa and necessary dependencies**:
+    ```bash
+    pip install rasa
+    pip install transformers torch  # For using pre-trained models like BERT
+    ```
+
+3. **Train the Rasa model**:
+    ```bash
+    rasa train
+    ```
+
+4. **Run the Rasa server**:
+    ```bash
+    rasa run --enable-api --cors "*"
+    ```
+
+### Frontend Setup
+
+1. **Navigate to the frontend directory**:
+    ```bash
+    cd my-chatbot-app
+    ```
+
+2. **Install the dependencies**:
+    ```bash
+    npm install
+    ```
+
+3. **Start the development server**:
+    ```bash
+    npm run dev
+    ```
+
+### Integrate Frontend with Backend
+
+1. **Update `src/ActionProvider.js` in the frontend**:
+    ```javascript
+    class ActionProvider {
+      constructor(createChatBotMessage, setStateFunc) {
+        this.createChatBotMessage = createChatBotMessage;
+        this.setState = setStateFunc;
+      }
+
+      async handleMessage(message) {
+        const responseMessage = this.createChatBotMessage("Thank you for your message!");
+
+        this.setState((prevState) => ({
+          ...prevState,
+          messages: [...prevState.messages, responseMessage],
+        }));
+
+        try {
+          const response = await fetch("http://localhost:8000/api/chat", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ message }),
+          });
+
+          if (!response.ok) {
+            throw new Error("Failed to communicate with the backend");
+          }
+
+          const data = await response.json();
+          const rasaMessages = data.map((msg) => this.createChatBotMessage(msg.text));
+
+          this.setState((prevState) => ({
+            ...prevState,
+            messages: [...prevState.messages, ...rasaMessages],
+          }));
+        } catch (error) {
+          console.error("Error communicating with backend:", error);
+          const errorMessage = this.createChatBotMessage("Sorry, there was an error processing your message. Please try again later.");
+          this.setState((prevState) => ({
+            ...prevState,
+            messages: [...prevState.messages, errorMessage],
+          }));
+        }
+      }
+    }
+
+    export default ActionProvider;
+    ```
+
+### Running the Entire Application
+
+1. **Ensure the Rasa server is running**:
+    ```bash
+    rasa run --enable-api --cors "*"
+    ```
+
+2. **Ensure the FastAPI backend is running**:
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+
+3. **Ensure the React frontend is running**:
+    ```bash
+    npm run dev
+    ```
+
+4. **Open your browser and navigate to**:
+    ```bash
+    http://localhost:3000
+    ```
+
+By following these instructions, you should be able to set up and run the entire application smoothly. If you encounter any issues, please refer to the respective documentation or raise an issue in the repository.
