@@ -5,13 +5,6 @@ class ActionProvider {
   }
 
   async handleMessage(message) {
-    const responseMessage = this.createChatBotMessage("Thank you for your message!");
-
-    this.setState((prevState) => ({
-      ...prevState,
-      messages: [...prevState.messages, responseMessage],
-    }));
-
     try {
       const response = await fetch("http://localhost:8000/api/chat", {
         method: "POST",
