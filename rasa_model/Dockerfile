@@ -1,5 +1,5 @@
 # Use the official Rasa image from the Docker Hub
-FROM rasa/rasa:3.9.0
+FROM rasa/rasa:latest
 
 # Copy the project files into the container
 COPY . /app
