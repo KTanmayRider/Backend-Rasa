@@ -1,0 +1,46 @@
+.insightsChild,
+.insightsInner,
+.insightsItem {
+  width: 18.5rem;
+  height: 16.938rem;
+  position: absolute;
+  margin: 0 !important;
+  z-index: 3;
+}
+.insightsChild {
+  top: 78.125rem;
+  right: -9.875rem;
+}
+.insightsInner,
+.insightsItem {
+  top: 47rem;
+  left: -10.25rem;
+}
+.insightsInner {
+  top: 107.375rem;
+}
+.insights {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-black);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-mid) 0 1.562rem;
+  box-sizing: border-box;
+  gap: 4.8rem;
+  line-height: normal;
+  letter-spacing: normal;
+}
+@media screen and (max-width: 800px) {
+  .insights {
+    gap: 2.375rem;
+  }
+}
+@media screen and (max-width: 450px) {
+  .insights {
+    gap: var(--gap-lgi);
+  }
+}

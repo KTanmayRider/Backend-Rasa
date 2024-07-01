@@ -1,17 +1,28 @@
-import React from "react";
-import Chatbot from "react-chatbot-kit";
+import React, { useState } from "react";
+import { Chatbot } from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-
-import config from "../../chatbotConfig";
-import MessageParser from "../../MessageParser";
-import ActionProvider from "../../ActionProvider";
+import config from "./config";
+import MessageParser from "./MessageParser";
+import ActionProvider from "./ActionProvider";
 
 const ChatbotComponent = () => {
+  const [showBot, toggleBot] = useState(false);
   return (
-    <div>
-      <Chatbot config={config} messageParser={MessageParser} actionProvider={ActionProvider} />
+    <div className="App">
+      <button
+        className="app-chatbot-button"
+        onClick={() => toggleBot((prev) => !prev)}
+      >
+        Chat with us!
+      </button>
+      {showBot && (
+        <Chatbot
+          config={config}
+          messageParser={MessageParser}
+          actionProvider={ActionProvider}
+        />
+      )}
     </div>
   );
 };
-
 export default ChatbotComponent;
