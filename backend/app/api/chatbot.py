@@ -23,7 +23,7 @@ async def chat(request: Request):
 
         logger.debug(f"Sending message to Rasa: {message}")
         response = requests.post(
-            'http://localhost:5005/webhooks/rest/webhook',
+            'http://rasa:5005/webhooks/rest/webhook',
             json={"sender": "user", "message": message}
         )
         response.raise_for_status()
