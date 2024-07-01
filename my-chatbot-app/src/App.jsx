@@ -7,13 +7,14 @@ import Footer from '../src/Components/Footer/Footer';
 import Services from "../src/Components/Services/Services";
 import ConnectUs from "../src/Components/Connect/ConnectUs";
 import Career from '../src/Components/Career/Career';
-import ChatbotComponent from "../src/Components/Chatbot/Chatbot";
+import ChatbotComponent from "./Components/Chatbot/chatbot/Chatbot";
+import ChatButton from './Components/Chatbot/ChatButton';
 
 export default function App() {
   return (
     <>
       <Router>
-       <div>
+       <>
          <AppNavbar />
          <Routes>
            <Route path="/" element={<HeroSection/>}/>
@@ -22,9 +23,9 @@ export default function App() {
              <Route path="/connect" element={<ConnectUs/>}/>
              <Route path="/career" element={<Career/>}/>
           </Routes>
-          <ChatbotComponent />
+          <ChatButton />
           <Footer />
-       </div>
+       </>
      </Router>
     </>
   )
