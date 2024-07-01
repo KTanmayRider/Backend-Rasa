@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rasa
+
+  rasa:
+    build:
+      context: ./rasa_model
+    ports:
+      - "5005:5005"
