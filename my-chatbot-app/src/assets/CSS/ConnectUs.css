@@ -1,0 +1,228 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: montserrat;
+    }
+    
+    
+    
+    
+    
+    
+    
+    .connect{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column  ;
+        z-index: 1;
+        position: relative;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+    
+    
+    .paragraph
+    {
+        font-size: 2rem;
+        color: rgb(255, 255, 255);
+        max-width: 40%;
+        display: flex;
+        text-align: justify;
+        min-width: 15rem;
+    }
+    
+    .description{
+        height: 100%;
+        width: 100%;
+    }
+    
+    .roboDogimg
+    {
+        z-index: -1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+    
+    #title
+    {
+        color: white;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        font-size: 3.8rem;
+    }
+    
+    .name {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    
+    .name1
+    {
+        height: 2rem;
+        width: 10rem;
+        background-color: transparent;
+      
+        
+    }
+    
+    
+    .name{
+        display: flex;
+        
+    }
+    
+    .information
+    {
+      display: flex;
+    margin: auto;
+      flex-direction: column;
+     
+    }
+    
+    .feedback
+    {
+        height: 2rem;
+        background-color: transparent;
+        opacity: 100%;
+        padding: 2rem;
+    
+    }
+    
+    input{
+    
+    
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 1.5rem;
+    
+    }
+    button
+    {
+        background-color:  #7A7A7A;
+        border-radius: 2rem ;
+        border: 1px solid black;
+        color: white;
+        font-size: 1.5rem;
+        margin-top: 3rem;
+    
+        background: rgba( 255, 255, 255, 0.1 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    
+    }
+    
+    .name1
+    {
+        color: white;
+    }
+    
+    
+    .name1::placeholder
+    {
+        color: white;
+    }
+    
+    .feedback
+    {
+        color: white;
+    }
+    
+    .feedback::placeholder
+    {
+        color: white;
+    }
+    
+    .form
+    {
+        /* padding: 6rem; */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    @media (max-width:1050px)
+    {
+        #title
+        {
+            font-size: 3rem;
+        }
+    
+        .paragraph
+        {
+            font-size: 23px;
+        }
+    
+        .form{}
+    }
+    
+    
+    @media (max-width:768px)
+    {
+    
+        .roboDog img
+        {
+            width: 68rem;
+            height: 46rem;
+            padding-left: 19rem;
+        }
+    
+        .paragraph {
+            font-size: 23px;
+        }
+    
+    
+    }
+    
+    
+    @media (max-width:450px)
+        
+    {
+    .roboDog img
+    {
+    
+        width: 67rem;
+        height: 46rem;
+        padding-left: 41rem;
+        
+    }
+    
+    .roboDogimg
+        {
+        }
+    
+    }
+    
+    .connectus{
+        display: flex;
+        align-items: baseline;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+    }
+    
+    @media (max-width:320px)
+    {
+        .roboDog img {
+            height: 46rem;
+            padding-left: 64rem;
+            width: 64rem;
+        }   
+        .paragraph {
+            font-size: 1.3rem;
+            color: rgb(255, 255, 255);
+            display: flex;
+    }
+    }
+    
+    
+    
+    

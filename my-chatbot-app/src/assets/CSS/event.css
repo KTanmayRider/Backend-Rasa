@@ -1,0 +1,141 @@
+p {
+  margin: 0;
+}
+
+.events-container {
+  font-family: "Montserrat", Arial, sans-serif;
+  color: white;
+  background-color: #000;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-event-image {
+  width: 51.75rem;
+  height: auto;
+}
+
+.event-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.left-panel,
+.right-panel {
+  flex: 1;
+  padding: 1.25rem;
+  margin: 0.625rem;
+  background-color: #000;
+}
+
+@media (max-width: 48rem) {
+  .event-content {
+    flex-direction: column;
+  }
+}
+
+.social-media-container {
+  display: flex;
+  align-items: center;
+  padding: 0.625rem 0;
+}
+
+.vertical-divider {
+  width: 0.125rem;
+  height: 6.3125rem;
+  background-color: #cccccc;
+  margin-right: 1.25rem;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons a {
+  margin: 0 0.5rem;
+}
+
+.icons img {
+  width: 2.1875rem;
+  height: auto;
+}
+
+.event-details-container {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 0.625rem 1.25rem;
+}
+
+.location-details,
+.date-details {
+  display: flex;
+  align-items: center;
+  margin: 0.3125rem 0;
+}
+
+.icon {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-right: 0.625rem;
+}
+
+.details-text {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.event-expectations-container {
+  padding: 1.25rem;
+  border-radius: 0.625rem;
+  margin: 1.25rem;
+}
+
+.event-expectations-container h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.9375rem;
+}
+
+.event-expectations-container .highlight {
+  color: #42b154;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin-bottom: 0.625rem;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6.25rem;
+}
+
+.register-now {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+}
+
+.register-now:hover,
+.register-now:focus {
+  background-color: #367c39;
+  transform: scale(1.05);
+  outline: none;
+}

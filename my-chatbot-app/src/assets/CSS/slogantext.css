@@ -1,0 +1,35 @@
+.text-container {
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.text-container h1 {
+  font-size: 4vw;
+  line-height: 1.2;
+  color: white;
+}
+
+.text-container h1 span {
+  color: #34d431;
+  font-size: 4.5vw;
+}
+
+@media (max-width: 768px) {
+  .text-container h1 {
+    font-size: 5.5vw;
+    margin-bottom: 2rem;
+  }
+  .text-container h1 span {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .text-container h1 {
+    font-size: 15vw;
+  }
+  .text-container h1 span {
+    font-size: 14vw;
+  }
+}

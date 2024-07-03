@@ -1,0 +1,124 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  font-weight: 500;
+  color: rgba(0, 255, 0, 1); /* Change blue color to green */
+  text-decoration: inherit;
+}
+a:hover {
+  color: rgba(0, 255, 0, 1); /* Change blue color to green */
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1A1A1A;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: rgba(0, 255, 0, 1); /* Change blue color to green */
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #FFFFFF;
+  }
+  a:hover {
+    color: rgba(0, 255, 0, 1); /* Change blue color to green */
+  }
+  button {
+    background-color: #F9F9F9;
+  }
+}
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above other elements */
+}
+.chat-button img {
+  width: 100px; /* Adjust size as needed */
+  height: 100px;
+}
+.chatbox {
+  position: fixed;
+  bottom: 140px; /* Adjust based on button size */
+  right: 20px;
+  z-index: 1000;
+  width: 250px; /* Adjust width as needed */
+  height: 500px; /* Adjust height as needed */
+  background: black; /* Change background color to black */
+  border: 1px solid black; /* Change border color to green */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.react-chatbot-kit-chat-bot-message {
+  background: #34D431;; /* Change chatbot message background to dark green */
+  color: white; /* Change chatbot message text color to white */
+}
+.react-chatbot-kit-user-message {
+  background: rgba(0, 255, 0, 1); /* Change user message background to green */
+  color: black; /* Change user message text color to black */
+}
+.react-chatbot-kit-chat-input {
+  background:white; /* Ensure the input area background is grey */
+  color: black; /* Change input text color to black */
+}
+.react-chatbot-kit-chat-input input {
+  background: white; /* Ensure the input field background is grey */
+  color: black; /* Change input field text color to black */
+  border: 1px solid rgba(0, 255, 0, 1); /* Change input border color to green */
+}
+.react-chatbot-kit-chat-input button {
+  background: white; /* Change input button background to dark green */
+  color: white; /* Change input button text color to white */
+}
+.react-chatbot-kit-chat-message-container {
+  background: black;
+}
+.react-chatbot-kit-chat-header {
+  background-color: white; /* Change header background color to white */
+  color: black; /* Change header text color to white */
+}
+.react-chatbot-kit-chat-btn-send {
+background-color: #34D431;
+}
+
+.react-chatbot-kit-user-avatar-container {
+background-color: d8d8d8;
+}
+
+.chatbotDiv{
+  position: absolute;
+  right: 5rem;
+}
