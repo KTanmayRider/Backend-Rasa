@@ -2,34 +2,32 @@ version: "3.1"
 
 intents:
   - greet
+  - ask_about_ai_training
   - ask_about_company
   - ask_about_services
-  - ask_about_ai_training
+  - ask_for_pricing_or_details
+  - unknown_query
+
+actions:
+  - action_about_company
+  - action_list_services
+  - action_what_makes_unique
 
 responses:
   utter_greet:
-    - text: "Hello! How can I help you today?"
+    - text: "Hello! How can I assist you today?"
 
-actions:
-  - action_utter_response
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
 
-slots:
-  service:
-    type: text
-    mappings:
-      - type: from_text
+  utter_about_company:
+    - text: "Green Rider Technology (GRT) is a leading company in AI solutions."
 
-  technology:
-    type: text
-    mappings:
-      - type: from_text
+  utter_services:
+    - text: "We offer electric vehicle solutions, data science services, and AI training."
 
-  team_member:
-    type: text
-    mappings:
-      - type: from_text
+  utter_contact_hr:
+    - text: "For more details on this, please contact our HR department at hr@greenrider.com."
 
-  company_name:
-    type: text
-    mappings:
-      - type: from_text
+  utter_default:
+    - text: "I'm sorry, I don't have the information you need. Please contact our HR department at hr@greenrider.com."

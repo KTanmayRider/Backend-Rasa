@@ -1,22 +1,26 @@
-version: "2.0"
-
+version: "3.1"
 stories:
-- story: greet path
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - story: Greet the user
+    steps:
+      - intent: greet
+      - action: utter_greet
 
-- story: ask about company
-  steps:
-  - intent: ask_about_company
-  - action: action_utter_response
+  - story: Ask about AI training
+    steps:
+      - intent: ask_about_ai_training
+      - action: utter_about_company
 
-- story: ask about services
-  steps:
-  - intent: ask_about_services
-  - action: action_utter_response
+  - story: Ask about services
+    steps:
+      - intent: ask_about_services
+      - action: utter_services
 
-- story: ask about AI training
-  steps:
-  - intent: ask_about_ai_training
-  - action: action_utter_response
+  - story: Ask for pricing or details
+    steps:
+      - intent: ask_for_pricing_or_details
+      - action: utter_contact_hr
+
+  - story: Unknown query
+    steps:
+      - intent: unknown_query
+      - action: utter_default

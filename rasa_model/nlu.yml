@@ -116,6 +116,19 @@ nlu:
     - Can you connect me with a sales representative?
     - What is the best way to reach you?
 
+- intent: ask_for_pricing_or_details
+  examples: |
+    - Can you tell me the price of your services?
+    - What are the details of your AI training program?
+    - How much does it cost to get a consultation?
+    - I need more information about your data science services.
+
+- intent: unknown_query
+  examples: |
+    - I have a question that you might not know.
+    - Can you help me with something specific?
+    - I need to ask about something else.
+
 # General conversation intents using the Kaggle dataset
 - intent: general_conversation
   examples: |
